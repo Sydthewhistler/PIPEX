@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+#include <sys/wait.h>
 # define BUFFER_SIZE 64
 
 void	error_execve(void);
