@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 20:05:12 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/13 15:33:40 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:41:02 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	pannel_control(char **argv, int argc, int fd_input, int fd_output)
 		prev_fd = pipe_fd[0];
 		i++;
 	}
-	return (wait_for_children());
+	return (/*wait_for_children()*/0);
 }
 
 int	manage_heredoc(char *limiter)
@@ -115,6 +115,8 @@ int	main(int argc, char **argv)
 	int	fd_input;
 	int	fd_output;
 
+	if (argc < 5)
+		return (-1);
 	if (ft_strcmp(argv[1], "here_doc") == 0)
 		fd_input = manage_heredoc(argv[2]);
 	else

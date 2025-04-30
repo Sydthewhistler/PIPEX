@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:14:43 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/09 21:16:36 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:51:30 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int	pannel_control(char **argv, int fd_input, int fd_output)
 		error_execve();
 	}
 	close(pipe_fd[1]);
-	waitpid(id, NULL, 0);
 	exe_cmd(pipe_fd[0], fd_output, argv[3]);
 	error_execve();
 	return (0);
